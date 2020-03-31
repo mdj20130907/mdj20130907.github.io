@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Michael Pan</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+        (function(){
+            if(location.host.indexOf('github') !== -1){
+                const ga = document.createElement('script')
+                ga.src = 'https://www.googletagmanager.com/gtag/js?id=UA-88679536-2'
+                ga.async = true
+                ga.onload = ()=>{
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'UA-88679536-2');
+                }
+                document.head.appendChild(ga)
+            }
+        })()
+    </script>
+
+    <!-- https://momentjs.com/ -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/min/moment-with-locales.min.js"></script>
+
+    <!-- https://fusejs.io/ -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
+    <script>
+        (function(){
+            const parser = new DOMParser()
+            const fuzzy_search_list = []
+
+            function getTitleFrom(thatDay){
+                const url = thatDay.format('YYYY/MM/DD') + '.html'
+                fetch(url).then(async response=>{
+                    if(response.ok){
+                        // 加入当前title
+                        const text = await response.text()
+                        const title = parser.parseFromString(text,'text/html').title
+                        fuzzy_search_list.push({url, title})
+                        // 继续获取下一个title
+                        getTitleFrom(thatDay.subtract(1,'days'))
+                    }else{
+                        // 没有了
+                        const fuse=new Fuse(fuzzy_search_list, {keys: ['title']})
+                        window.search = (v)=>{
+                            const searchResult = document.querySelector('.search-result')
+                            searchResult.innerHTML = ''
+                            fuse.search(v).forEach(x=>{
+                                const a = document.createElement('a')
+                                a.href = x.item.url
+                                a.target = '_blank'
+                                a.innerText = x.item.title
+                                const li = document.createElement('li')
+                                li.appendChild(a)
+                                searchResult.appendChild(li)
+                            })
+                        }
+                    }
+                })
+            }
+
+            getTitleFrom(moment())
+        })()
+    </script>
+
+    <style>
+        .flex-box {
+            margin-top: 10vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-box">
+        <input type="search" placeholder="输入关键字搜索" oninput="search(this.value)">
+        <ul class="search-result"></ul>
+    </div>
+</body>
+</html>
