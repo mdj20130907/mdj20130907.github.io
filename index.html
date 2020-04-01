@@ -36,16 +36,22 @@
                 const url = thatDay.format('YYYY/MM/DD') + '.html'
                 fetch(url).then(async response=>{
                     if(response.ok){
-                        // 加入当前title
+                        // 加入当前的
                         const text = await response.text()
-                        const title = parser.parseFromString(text,'text/html').title
-                        fuzzy_search_list.push({url, title})
-                        // 继续获取下一个title
+                        const doc = parser.parseFromString(text,'text/html')
+                        const title = doc.title
+                        const keywordsMeta = doc.querySelector('meta[name=keywords]')
+                        const keywords = keywordsMeta ? keywordsMeta.content : ''
+                        const descriptionMeta = doc.querySelector('meta[name=description]')
+                        const description = descriptionMeta ? descriptionMeta.content : ''
+                        fuzzy_search_list.push({url, title, keywords, description})
+                        // 继续获取下一个
                         getTitleFrom(thatDay.subtract(1,'days'))
                     }else{
                         // 没有了
-                        const fuse=new Fuse(fuzzy_search_list, {keys: ['title']})
+                        const fuse=new Fuse(fuzzy_search_list, {keys: ['title', 'keywords', 'description']})
                         window.search = (v)=>{
+                            if(!v) return
                             const searchResult = document.querySelector('.search-result')
                             searchResult.innerHTML = ''
                             fuse.search(v).forEach(x=>{
