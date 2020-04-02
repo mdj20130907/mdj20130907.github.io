@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ext_skel.php</title>
+  <meta name="keywords" content="php,extension">
+</head>
+<body>
+  <div>
+    <ul>
+      <li>https://www.php.net/manual/en/internals2.structure.php</li>
+      <li><pre>
+apt install php-dev
+
+mkdir test; cd test
+php --version
+apt source php{version}
+
+cd {php-src}/ext
+./ext_skel.php --ext ext001
+
+cd {php-src}
+./buildconf
+./configure --enable-ext001
+make
+make test TESTS=ext/ext001/tests
+
+php -m |grep ext001
+./sapi/cli/php -m |grep ext001
+./sapi/cli/php -r 'ext001_test1();'
+./sapi/cli/php -r 'echo ext001_test2();echo PHP_EOL;'
+./sapi/cli/php -r 'echo ext001_test2(time());echo PHP_EOL;'
+      </pre></li>
+    </ul>
+  </div>
+</body>
+</html>
