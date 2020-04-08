@@ -51,9 +51,9 @@
                         // 没有了
                         const fuse=new Fuse(fuzzy_search_list, {keys: ['title', 'keywords', 'description']})
                         window.search = (v)=>{
-                            if(!v) return
                             const searchResult = document.querySelector('.search-result')
                             searchResult.innerHTML = ''
+                            if(!v) return
                             fuse.search(v).forEach(x=>{
                                 const a = document.createElement('a')
                                 a.href = x.item.url
