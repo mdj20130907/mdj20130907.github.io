@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>mysql</title>
+  <meta name="keywords" content="mysql,json">
+</head>
+<body>
+  <div>
+    <ul>
+      <li>https://dev.mysql.com/doc/</li>
+
+      <li>mysqld --verbose --help |grep 'my\.cnf'</li>
+
+      <li>CREATE USER 'repl'@'%' IDENTIFIED BY '******'; GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%';</li>
+
+      <li>mysql -uroot -psecret -N information_schema -e "select table_name from tables where table_schema = 'mydb' and table_name not like 'my%'" > tables.txt</li>
+      <li>mysqldump dbname `cat tables.txt` > dump_file.sql</li>
+
+      <li>mysql -NB  information_schema -e "select table_name from tables where table_name like 'bak_%'" | xargs -I"{}" mysql dbname -e "DROP TABLE {}"</li>
+
+      <li>mysqldump db_localhost -uroot -ppassword --add-drop-table | mysql -hremote db_remote -uroot -ppassword</li>
+    </ul>
+  </div>
+</body>
+</html>
