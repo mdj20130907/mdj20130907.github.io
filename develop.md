@@ -5,6 +5,8 @@
 - https://reactnative.dev/
 - https://angular.io/
 - https://ionicframework.com/
+- https://github.com/Tencent/kbone
+- https://github.com/Tencent/wepy
 
 ### 前端UI库
 - https://github.com/ElemeFE/mint-ui
@@ -109,18 +111,15 @@
 - https://www.swi-prolog.org/
 - https://elixir-lang.org/
 - https://github.com/dotnet/cli
-
-### 爬虫库
-- https://github.com/puppeteer/puppeteer
-- https://phantomjs.org/
-- https://github.com/scrapy/scrapy
-- https://github.com/binux/pyspider
-- http://docs.python-requests.org/zh_CN/latest/user/quickstart.html
+- https://dart.dev/
 
 ### 标准
-- https://whatwg.org/
+- https://24ways.org/
 - https://12factor.net/zh_cn/
+- https://chromedevtools.github.io/devtools-protocol/
 - https://github.com/tc39/ecma262
+- https://www.openssl.org/
+- https://whatwg.org/
 
 ### 好东西
 - https://bestofjs.org/
@@ -132,3 +131,4 @@
 - https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
 - http://cz88.net/ip/
 - https://letsencrypt.org/
+- https://grpc.io/
