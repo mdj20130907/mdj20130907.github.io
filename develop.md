@@ -35,8 +35,13 @@
 - https://laravel.com/
 - https://github.com/z-song/laravel-admin
 - https://github.com/the-control-group/voyager
-- https://wp-cli.org/
 - https://sleepingowladmin.ru/#/
+
+- https://wp-cli.org/
+- https://developer.wordpress.org/reference/
+
+- https://spring.io/
+- https://beanvalidation.org/
 
 ### 后台UI库
 - https://semantic-ui.com/
@@ -134,3 +139,5 @@
 - http://cz88.net/ip/
 - https://letsencrypt.org/
 - https://grpc.io/
+- https://martinfowler.com/
+- https://www.thoughtworks.com/
