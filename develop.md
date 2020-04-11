@@ -42,6 +42,7 @@
 - https://semantic-ui.com/
 - https://getbootstrap.com/
 - https://adminlte.io/
+- https://github.com/PanJiaChen/vue-element-admin
 
 ### 后台UI插件
 - https://github.com/kartik-v/bootstrap-fileinput
@@ -126,6 +127,7 @@
 - https://github.com/
 - https://npm.taobao.org/mirrors
 - https://developers.google.cn/
+- https://packagist.org/
 
 ### 杂
 - https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
