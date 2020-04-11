@@ -15,6 +15,7 @@
 ### 前端UI插件
 - https://fontawesome.com/
 - https://github.com/ftlabs/fastclick
+- https://github.com/xuliangzhan/vxe-table
 
 ### 前端工具库
 - https://github.com/postcss/autoprefixer
@@ -55,6 +56,7 @@
 - https://www.highcharts.com/
 
 ### 系统工具、命令、服务
+- https://github.com/cmderdev/cmder
 - sed
 - https://nmap.org/
 - https://github.com/rofl0r/proxychains-ng
@@ -99,6 +101,14 @@
 - https://golang.org/
 - https://www.swi-prolog.org/
 - https://elixir-lang.org/
+- https://github.com/dotnet/cli
+
+### 爬虫库
+- https://github.com/puppeteer/puppeteer
+- https://phantomjs.org/
+- https://github.com/scrapy/scrapy
+- https://github.com/binux/pyspider
+- http://docs.python-requests.org/zh_CN/latest/user/quickstart.html
 
 ### 标准
 - https://whatwg.org/
@@ -107,3 +117,6 @@
 
 ### 好东西
 - https://bestofjs.org/
+
+### 杂
+- https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
