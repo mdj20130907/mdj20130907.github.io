@@ -5,8 +5,6 @@
 - https://reactnative.dev/
 - https://angular.io/
 - https://ionicframework.com/
-- https://github.com/Tencent/kbone
-- https://github.com/Tencent/wepy
 
 ### 前端UI库
 - https://github.com/ElemeFE/mint-ui
@@ -19,6 +17,7 @@
 - https://fontawesome.com/
 - https://github.com/ftlabs/fastclick
 - https://github.com/xuliangzhan/vxe-table
+- https://clipboardjs.com/
 
 ### 前端工具库
 - https://github.com/postcss/autoprefixer
@@ -26,6 +25,11 @@
 - https://babeljs.io/
 - https://lodash.com/
 - https://flow.org/
+- https://bugly.qq.com/v2/
+
+### 微信小程序
+- https://github.com/Tencent/kbone
+- https://github.com/Tencent/wepy
 
 ### api对接
 - https://graphql.org/
@@ -58,6 +62,7 @@
 - http://image.intervention.io/
 - https://github.com/overtrue/wechat
 - https://github.com/PHPOffice
+- http://docs.guzzlephp.org/en/stable/index.html
 
 ### 绘图
 - https://www.chartjs.org/
@@ -130,9 +135,10 @@
 ### 好东西
 - https://bestofjs.org/
 - https://github.com/
+- https://packagist.org/
 - https://npm.taobao.org/mirrors
 - https://developers.google.cn/
-- https://packagist.org/
+- https://developer.apple.com/
 
 ### 杂
 - https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/

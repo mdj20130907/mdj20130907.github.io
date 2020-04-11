@@ -26,7 +26,10 @@
 ### driver
 - http://selendroid.io/mobileWeb.html#python
 - https://github.com/detro/ghostdriver
+
 - https://github.com/mozilla/geckodriver/releases
-- http://chromedriver.storage.googleapis.com/index.html
-- http://selenium-release.storage.googleapis.com/3.6/selenium-server-standalone-3.6.0.jar
 - http://ftp.mozilla.org/pub/xulrunner/releases/latest/sdk/
+
+- http://chromedriver.storage.googleapis.com/index.html
+- https://sites.google.com/a/chromium.org/chromedriver/home
+- http://selenium-release.storage.googleapis.com/3.6/selenium-server-standalone-3.6.0.jar
