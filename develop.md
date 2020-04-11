@@ -63,12 +63,17 @@
 - systemd
 - http://supervisord.org/
 - https://github.com/rsyslog/rsyslog
-- http://nginx.org/
-- https://php-fpm.org/
 - https://github.com/stedolan/jq
 - https://httpie.org/
 - https://jenkins.io/
 - https://github.com/allinurl/goaccess
+- https://www.phpmyadmin.net
+
+### web服务
+- http://www.acme.com/software/thttpd/
+- https://php-fpm.org/
+- http://nginx.org/
+- https://www.zabbix.com/
 
 ### 消息队列
 - https://nsq.io/
@@ -84,6 +89,7 @@
 - https://neo4j.com/
 - https://www.mongodb.com/
 - https://www.influxdata.com/
+- https://www.influxdata.com/time-series-platform/telegraf/
 
 ### 操作系统
 - debian
@@ -117,6 +123,9 @@
 
 ### 好东西
 - https://bestofjs.org/
+- https://github.com/
 
 ### 杂
 - https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
+- http://cz88.net/ip/
+- https://letsencrypt.org/
