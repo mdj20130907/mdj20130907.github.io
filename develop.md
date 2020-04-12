@@ -86,6 +86,8 @@
 - https://jenkins.io/
 - https://github.com/allinurl/goaccess
 - https://www.phpmyadmin.net
+- http://loganalyzer.adiscon.com/downloads/
+- https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
 
 ### web服务
 - http://www.acme.com/software/thttpd/

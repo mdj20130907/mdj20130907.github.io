@@ -15,3 +15,7 @@
 - https://github.com/openai/gym
 - http://study.163.com/course/introduction.htm?courseId=1003223001
 - http://daggerfs.com/
+- https://zhuanlan.zhihu.com/p/33720111
+
+###
+- https://google.ai/

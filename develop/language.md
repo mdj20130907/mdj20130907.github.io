@@ -12,3 +12,4 @@
 - https://elixir-lang.org/
 - https://github.com/dotnet/cli
 - https://dart.dev/
+- https://www.rstudio.com/resources/cheatsheets/
