@@ -44,13 +44,6 @@
 - https://wp-cli.org/
 - https://developer.wordpress.org/reference/
 
-- https://spring.io/
-- https://beanvalidation.org/
-- https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html
-- https://jsoup.org/
-- http://jenv.io/
-- https://mybatis.org/mybatis-3/
-
 ### 后台UI库
 - https://semantic-ui.com/
 - https://getbootstrap.com/
@@ -72,6 +65,13 @@
 - https://www.chartjs.org/
 - https://github.com/d3/d3
 - https://www.highcharts.com/
+
+### 地图定位
+- https://lbs.amap.com/
+- https://lbs.qq.com/index.html
+
+### 邮箱
+- https://exmail.qq.com/
 
 ### 系统工具、命令、服务
 - https://github.com/cmderdev/cmder
@@ -129,6 +129,7 @@
 - https://developers.google.cn/
 - https://developer.apple.com/
 - https://css-tricks.com/
+- https://codelabs.developers.google.com/
 
 ### 杂
 - https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/

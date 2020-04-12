@@ -17,3 +17,6 @@
 - https://github.com/wechaty/wechaty-puppet-puppeteer
 - https://github.com/wechaty/wechaty-puppet-wechat4u
 - https://github.com/nodeWechat/wechat4u
+
+###
+- https://github.com/Urinx/WeixinBot

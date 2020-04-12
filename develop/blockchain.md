@@ -1,5 +1,7 @@
 ### bitcoin
+- https://en.bitcoin.it/wiki/Main_Page
 - https://github.com/bitcoinbook/bitcoinbook
+- https://www.blockchain.com/
 
 ### ethereum
 - https://ethereum.org
