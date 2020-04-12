@@ -109,10 +109,6 @@
 - https://www.influxdata.com/
 - https://www.influxdata.com/time-series-platform/telegraf/
 
-### 操作系统
-- debian
-- ubuntu
-
 ### 标准
 - https://24ways.org/
 - https://12factor.net/zh_cn/

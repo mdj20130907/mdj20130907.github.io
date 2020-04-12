@@ -1,0 +1,6 @@
+- http://sourabhbajaj.com/mac-setup/
+- https://cocoapods.org/
+- https://support.apple.com/zh-cn/guide/automator/welcome/mac
+- https://github.com/theos/theos
+- https://segmentfault.com/a/1190000004879405
+- https://iina.io/
