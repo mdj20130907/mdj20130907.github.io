@@ -46,6 +46,10 @@
 
 - https://spring.io/
 - https://beanvalidation.org/
+- https://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html
+- https://jsoup.org/
+- http://jenv.io/
+- https://mybatis.org/mybatis-3/
 
 ### 后台UI库
 - https://semantic-ui.com/
@@ -109,21 +113,6 @@
 - debian
 - ubuntu
 
-### 语言
-- php
-- https://www.typescriptlang.org/
-- https://www.scala-lang.org/
-- https://www.rust-lang.org/zh-CN/
-- http://www.ruby-lang.org/zh_cn/
-- https://www.clojure.org/
-- https://www.lua.org/
-- https://sass-lang.com/
-- https://golang.org/
-- https://www.swi-prolog.org/
-- https://elixir-lang.org/
-- https://github.com/dotnet/cli
-- https://dart.dev/
-
 ### 标准
 - https://24ways.org/
 - https://12factor.net/zh_cn/
@@ -139,6 +128,7 @@
 - https://npm.taobao.org/mirrors
 - https://developers.google.cn/
 - https://developer.apple.com/
+- https://css-tricks.com/
 
 ### 杂
 - https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
@@ -147,3 +137,4 @@
 - https://grpc.io/
 - https://martinfowler.com/
 - https://www.thoughtworks.com/
+- https://www.wolframalpha.com/
