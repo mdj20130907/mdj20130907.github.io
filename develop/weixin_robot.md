@@ -18,5 +18,9 @@
 - https://github.com/wechaty/wechaty-puppet-wechat4u
 - https://github.com/nodeWechat/wechat4u
 
+### vbot
+- http://create.hanc.cc/vbot/
+- https://github.com/hanson/vbot
+
 ###
 - https://github.com/Urinx/WeixinBot

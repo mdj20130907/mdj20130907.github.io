@@ -74,6 +74,10 @@
 - https://exmail.qq.com/
 
 ### 系统工具、命令、服务
+- curl
+- wget
+- proxychains
+- ssh
 - https://github.com/cmderdev/cmder
 - sed
 - https://nmap.org/
@@ -120,6 +124,7 @@
 - https://whatwg.org/
 
 ### 好东西
+- https://www.npmjs.com/
 - https://bestofjs.org/
 - https://github.com/
 - https://packagist.org/
