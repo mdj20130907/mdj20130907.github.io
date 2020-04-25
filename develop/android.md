@@ -23,3 +23,6 @@
 - https://github.com/MiCode/Xiaomi_Kernel_OpenSource
 - https://github.com/MiCode/Xiaomi_Kernel_OpenSource/tree/lavender-p-oss
 - https://forum.xda-developers.com/redmi-note-7/development
+
+### 自动化
+- https://github.com/openatx/uiautomator2
