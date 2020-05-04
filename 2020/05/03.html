@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>认识数字</title>
+    <!-- https://developers.google.cn/fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&effect=fire-animation">
+    <style>
+        body {
+            font-family: 'Roboto', serif;
+            margin: 0;
+            text-align: center;
+        }
+
+        .number {
+            height: 100vh;
+            background-color: #C7EDCC;
+            font-size: 80vmin;
+        }
+
+        .controls {
+            background-color: #FDE6E0;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+豆沙绿: #C7EDCC
+银河白    #FFFFFF
+杏仁黄    #FAF9DE
+秋叶褐    #FFF2E2
+胭脂红    #FDE6E0
+青草绿    #E3EDCD
+海天蓝    #DCE2F1
+葛巾紫    #E9EBFE
+极光灰    #EAEAEF
+R:  204  G: 232 B: 207
+-->
+    <div v-cloak id="app">
+        <div class="number font-effect-fire-animation">{{number}}</div>
+        <div class="controls">
+            <select v-model="interval" @change="restartAuto">
+                <option :value="2">2</option>
+                <option :value="5">5</option>
+                <option :value="10">10</option>
+            </select>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                number: undefined,// 默认的数字/字符
+                interval: 10,// 10秒换一个
+                intervalHandler: undefined
+            },
+            created() {
+                this.startAuto()
+            },
+            methods: {
+                startAuto() {
+                    this.intervalHandler = setInterval(() => {
+                        // this.number = Math.floor(Math.random() * 10)
+
+                        // 字母
+                        const code = Math.floor(Math.random() * 26)
+                        this.number = String.fromCharCode('A'.charCodeAt(0) + code) + '  ' + String.fromCharCode('a'.charCodeAt(0) + code)
+                    }, 1000 * this.interval)
+                },
+                stopAuto() {
+                    this.intervalHandler && clearInterval(this.intervalHandler)
+                },
+                restartAuto() {
+                    this.stopAuto()
+                    this.startAuto()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
