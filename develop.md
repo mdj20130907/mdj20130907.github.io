@@ -36,7 +36,6 @@
 - https://socket.io/
 
 ### 后台框架
-- https://laravel.com/
 - https://github.com/z-song/laravel-admin
 - https://github.com/the-control-group/voyager
 - https://sleepingowladmin.ru/#/
