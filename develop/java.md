@@ -8,6 +8,16 @@
 ### 其他
 - https://beanvalidation.org/
 - https://jsoup.org/
-- http://jenv.io/
 - https://projectlombok.org/download
 - http://www.querydsl.com/
+
+#### https://github.com/jenv/jenv
+- brew install jenv
+- jenv doctor
+- jenv enable-plugin export
+- https://adoptopenjdk.net/
+- brew cask install java / brew cask install adoptopenjdk8
+- jenv add $(/usr/libexec/java_home)
+- jenv versions
+- echo ${JAVA_HOME} / `/usr/libexec/java_home -v 11` / `ls /Library/Java/JavaVirtualMachines`
+- jenv local VERSION / jenv global VERSION /jenv macos-javahome / jenv shell VERSION
