@@ -1,5 +1,4 @@
 ### 语言
-- php
 - https://www.typescriptlang.org/
 - https://www.scala-lang.org/
 - https://www.rust-lang.org/zh-CN/

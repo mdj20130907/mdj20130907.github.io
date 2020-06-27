@@ -76,7 +76,7 @@
 - curl
 - wget
 - proxychains
-- ssh
+- ssh: -L
 - https://github.com/cmderdev/cmder
 - sed
 - https://nmap.org/
@@ -91,6 +91,8 @@
 - https://www.phpmyadmin.net
 - http://loganalyzer.adiscon.com/downloads/
 - https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
+- mac os x, imagesnap
+- tcpdump
 
 ### web服务
 - http://www.acme.com/software/thttpd/
