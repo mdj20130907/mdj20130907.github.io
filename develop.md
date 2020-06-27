@@ -125,11 +125,9 @@
 - https://whatwg.org/
 
 ### 好东西
-- https://www.npmjs.com/
 - https://bestofjs.org/
 - https://github.com/
 - https://packagist.org/
-- https://npm.taobao.org/mirrors
 - https://developers.google.cn/
 - https://developer.apple.com/
 - https://css-tricks.com/
