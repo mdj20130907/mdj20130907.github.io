@@ -36,10 +36,6 @@
 - https://socket.io/
 
 ### 后台框架
-- https://github.com/z-song/laravel-admin
-- https://github.com/the-control-group/voyager
-- https://sleepingowladmin.ru/#/
-
 - https://wp-cli.org/
 - https://developer.wordpress.org/reference/
 
