@@ -1,0 +1,2 @@
+- https://docs.microsoft.com/en-us/dotnet/
+- https://www.jetbrains.com/decompiler/
