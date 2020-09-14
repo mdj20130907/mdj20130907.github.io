@@ -35,40 +35,67 @@
     </ul>
 
     <ul>
-      <h5>Docker Engine 基本概念</h5>
-      <li>Docker Engine: server:dockerd, REST API, CLI:docker</li>
-      <li>The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands.</li>
-      <li>The daemon creates and manages Docker objects, such as images, containers, networks, and volumes.</li>
-    </ul>
-
-    <ul>
-      <h5>Docker objects</h5>
-      <li>https://docs.docker.com/get-started/</li>
-      <li>a `container` is nothing but a running process, with some added encapsulation features applied to it in order to keep it isolated from the host and from other containers</li>
-      <li>each container interacts with its own private filesystem; this filesystem is provided by a Docker image</li>
-      <li>an `image` includes everything needed to run an application - the code or binary, runtimes, dependencies, and any other filesystem objects required</li>
-
-      <li>Images: An image is a read-only template with instructions for creating a Docker container</li>
-      <li>Containers: A container is a runnable instance of an image</li>
-      <li>Services: Services allow you to scale containers across multiple Docker daemons, which all work together as a swarm with multiple managers and workers</li>
-    </ul>
-
-    <ul>
-      <h5>安装使用</h5>
+      <h5>安装</h5>
       <li>https://docs.docker.com/engine/install/</li>
-      <li>https://docs.docker.com/develop/</li>
-      <li>[docker run -dp 8000:80 docker/getting-started]=>    https://www.docker.com/101-tutorial</li>
-      <li>https://docs.docker.com/get-started/part2/</li>
-      <li>[Dockerfile]=>   https://docs.docker.com/engine/reference/builder/</li>
-      <li>[docker-compose.yml]=>   https://docs.docker.com/compose/</li>
     </ul>
 
     <ul>
-      <h5>基本使用(demo/docker/001): Build and run your image</h5>
-      <li>Define a container with Dockerfile: (demo/docker/001/Dockerfile)</li>
-      <li>Build and test your image: (demo/docker/001/build.sh)</li>
-      <li>Run your image as a container: (demo/docker/001/run.sh)</li>
+      <h5>教程/Guides =>    https://docs.docker.com/develop/</h5>
+      <li>
+        <ul>
+          <h5>https://docs.docker.com/get-started/overview/</h5>
+          <li>
+            <ul>
+              <h5>Docker Engine 基本概念</h5>
+              <li>Docker Engine: server:dockerd, REST API, CLI:docker</li>
+              <li>The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands.</li>
+              <li>The daemon creates and manages Docker objects, such as images, containers, networks, and volumes.</li>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <h5>Docker objects</h5>
+              <li>Images: An image is a read-only template with instructions for creating a Docker container</li>
+              <li>Containers: A container is a runnable instance of an image</li>
+              <li>Services: Services allow you to scale containers across multiple Docker daemons, which all work together as a swarm with multiple managers and workers</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <h5>https://docs.docker.com/get-started/</h5>
+          <li>a `container` is nothing but a running process, with some added encapsulation features applied to it in order to keep it isolated from the host and from other containers</li>
+          <li>each container interacts with its own private filesystem; this filesystem is provided by a Docker image</li>
+          <li>an `image` includes everything needed to run an application - the code or binary, runtimes, dependencies, and any other filesystem objects required</li>
+        </ul>
+      </li>
+      <li>
+        <ul>
+          <h5>https://docs.docker.com/get-started/part2/</h5>
+          <li>基本使用(demo/docker/001): Build and run your image</li>
+          <li>1. Define a container with Dockerfile: (demo/docker/001/Dockerfile)</li>
+          <li>2. Build and test your image: (demo/docker/001/build.sh)</li>
+          <li>3. Run your image as a container: (demo/docker/001/run.sh)</li>
+          <li>[Dockerfile]=>   https://docs.docker.com/engine/reference/builder/</li>
+        </ul>
+      </li>
     </ul>
+
+    <ul>
+      <h5>https://www.docker.com/101-tutorial</h5>
+      <li>docker run -dp 8000:80 docker/getting-started</li>
+
+      <li>
+        <h6>run两个相同的ubuntu镜像，数据不互通</h6>
+        <ul>
+          <li title="run一个ubuntu，并使用tail防止退出">docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"</li>
+          <li>docker exec `container-id` cat /data.txt</li>
+          <li title="run另一个ubuntu，发现并没有出现之前ubuntu生成的文件">docker run -it ubuntu ls /</li>
+        </ul>
+      </li>
+    </ul>
+
     <ul>
       <h5>常用镜像</h5>
       <li>https://hub.docker.com/_/mysql</li>
@@ -76,6 +103,8 @@
       <li>https://hub.docker.com/_/nginx</li>
       <li>https://hub.docker.com/_/php</li>
     </ul>
+
+    <li>[docker-compose.yml]=>   https://docs.docker.com/compose/</li>
   </div>
 </body>
 </html>
