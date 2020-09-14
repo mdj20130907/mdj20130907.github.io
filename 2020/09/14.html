@@ -43,6 +43,11 @@
 
     <ul>
       <h5>Docker objects</h5>
+      <li>https://docs.docker.com/get-started/</li>
+      <li>a `container` is nothing but a running process, with some added encapsulation features applied to it in order to keep it isolated from the host and from other containers</li>
+      <li>each container interacts with its own private filesystem; this filesystem is provided by a Docker image</li>
+      <li>an `image` includes everything needed to run an application - the code or binary, runtimes, dependencies, and any other filesystem objects required</li>
+
       <li>Images: An image is a read-only template with instructions for creating a Docker container</li>
       <li>Containers: A container is a runnable instance of an image</li>
       <li>Services: Services allow you to scale containers across multiple Docker daemons, which all work together as a swarm with multiple managers and workers</li>
@@ -58,6 +63,12 @@
       <li>[docker-compose.yml]=>   https://docs.docker.com/compose/</li>
     </ul>
 
+    <ul>
+      <h5>基本使用(demo/docker/001): Build and run your image</h5>
+      <li>Define a container with Dockerfile: (demo/docker/001/Dockerfile)</li>
+      <li>Build and test your image: (demo/docker/001/build.sh)</li>
+      <li>Run your image as a container: (demo/docker/001/run.sh)</li>
+    </ul>
     <ul>
       <h5>常用镜像</h5>
       <li>https://hub.docker.com/_/mysql</li>
