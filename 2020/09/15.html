@@ -90,8 +90,12 @@
         <h6>run两个相同的ubuntu镜像，数据不互通</h6>
         <ul>
           <li title="run一个ubuntu，并使用tail防止退出">docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"</li>
-          <li>docker exec `container-id` cat /data.txt</li>
+          <li>docker exec `container-id/name` cat /data.txt</li>
           <li title="run另一个ubuntu，发现并没有出现之前ubuntu生成的文件">docker run -it ubuntu ls /</li>
+        </ul>
+        <ul>
+          <li>named volumes: Think of a named volume as simply a bucket of data. Docker maintains the physical location on the disk and you only need to remember the name of the volume</li>
+          <li>we can use a bind mount to mount our source code into the container to let it see code changes</li>
         </ul>
       </li>
     </ul>
