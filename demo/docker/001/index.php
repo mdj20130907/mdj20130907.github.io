@@ -17,8 +17,10 @@ if(array_key_exists('balance', $_POST)){
 
 // 测试mysql
 try {
-    $mysqlIp = '172.18.0.2';// 借助nicolaka/netshoot镜像获得
-    $dbh = new PDO("mysql:host=$mysqlIp;dbname=test", 'root', 'secret');
+    $mysqlHost = '172.18.0.2';// 借助nicolaka/netshoot镜像获得
+    $mysqlHost = 'mysql';// 因为ip会变
+    // demo/docker/001/docker-compose.yml: We can pick any name for the service. The name will automatically become a network alias, which will be useful when defining our MySQL service.
+    $dbh = new PDO("mysql:host=$mysqlHost;dbname=test", 'root', 'secret');
     foreach($dbh->query('show databases') as $row) {
         print_r($row);
         print '<br/>';

@@ -95,7 +95,9 @@
         </ul>
         <ul>
           <li>named volumes: Think of a named volume as simply a bucket of data. Docker maintains the physical location on the disk and you only need to remember the name of the volume</li>
+          <li>(demo/docker/001/run_using_named_volumes.sh)</li>
           <li>we can use a bind mount to mount our source code into the container to let it see code changes</li>
+          <li>(demo/docker/001/run_using_bind_mounts.sh)</li>
         </ul>
       </li>
 
@@ -109,6 +111,20 @@
           <li>3. 进入mysql测试一下(密码-> MYSQL_ROOT_PASSWORD)，docker exec -it `mysql-container-id` mysql -p，进去以后会发现数据库test已经创建好了；如果重来需要删除volume，volume中的数据不会自动覆盖</li>
           <li>4. 看一下mysql container的ip地址(--network-alias)，docker run -it --network my-test-net nicolaka/netshoot，`dig mysql`</li>
           <li>5. 查看日志，docker logs `container-id`</li>
+          <li>(demo/docker/001/run_connect_mysql.sh)</li>
+        </ul>
+      </li>
+
+      <li>
+        <h6>Docker Compose, define and share multi-container applications</h6>
+        <ul>
+          <li>1. 测试是否安装，docker-compose version</li>
+          <li>2. docker-compose.yml</li>
+          <li>3. https://docs.docker.com/compose/compose-file/</li>
+          <li>4. docker-compose up -d</li>
+          <li>docker-compose logs -f</li>
+          <li>docker-compose down</li>
+          <li>(demo/docker/001/docker-compose.yml)</li>
         </ul>
       </li>
     </ul>

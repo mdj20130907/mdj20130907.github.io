@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+    app:
+        image: my-test-app:1.0
+        ports:
+            - 8001:80
+    mysql:
+        image: mysql:5.7
+        volumes:
+            - my-test-vol:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: test
+
+volumes:
+    my-test-vol:
