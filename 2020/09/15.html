@@ -98,14 +98,27 @@
           <li>we can use a bind mount to mount our source code into the container to let it see code changes</li>
         </ul>
       </li>
+
+      <li>
+        <h6>Multi-Container Apps：php+mysql</h6>
+        <ul>
+          <li>each container should do one thing and do it well</li>
+          <li>containers, by default, run in isolation and don't know anything about other processes or containers on the same machine. So, how do we allow one container to talk to another? The answer is networking</li>
+          <li>1. 创建一个网络，docker network create my-test-net</li>
+          <li>2. 启动mysql并指定网络，docker run -d --network my-test-net --network-alias mysql -v my-test-vol:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=test mysql:5.7</li>
+          <li>3. 进入mysql测试一下(密码-> MYSQL_ROOT_PASSWORD)，docker exec -it `mysql-container-id` mysql -p，进去以后会发现数据库test已经创建好了；如果重来需要删除volume，volume中的数据不会自动覆盖</li>
+          <li>4. 看一下mysql container的ip地址(--network-alias)，docker run -it --network my-test-net nicolaka/netshoot，`dig mysql`</li>
+          <li>5. 查看日志，docker logs `container-id`</li>
+        </ul>
+      </li>
     </ul>
 
     <ul>
       <h5>常用镜像</h5>
+      <li>https://hub.docker.com/_/php</li>
       <li>https://hub.docker.com/_/mysql</li>
       <li>https://hub.docker.com/_/redis</li>
       <li>https://hub.docker.com/_/nginx</li>
-      <li>https://hub.docker.com/_/php</li>
     </ul>
 
     <li>[docker-compose.yml]=>   https://docs.docker.com/compose/</li>

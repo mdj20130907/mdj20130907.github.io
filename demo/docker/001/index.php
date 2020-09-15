@@ -15,6 +15,21 @@ if(array_key_exists('balance', $_POST)){
 }
 
 
+// 测试mysql
+try {
+    $mysqlIp = '172.18.0.2';// 借助nicolaka/netshoot镜像获得
+    $dbh = new PDO("mysql:host=$mysqlIp;dbname=test", 'root', 'secret');
+    foreach($dbh->query('show databases') as $row) {
+        print_r($row);
+        print '<br/>';
+    }
+    print '<br/>';
+    $dbh = null;
+} catch (PDOException $e) {
+    print 'Error!: ' . $e->getMessage() . '<br/>';
+}
+
+
 function f1($a1){
     echo '<pre>';
     echo $a1;
