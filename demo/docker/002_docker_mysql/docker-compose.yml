@@ -1,0 +1,14 @@
+# root:secret
+
+version: "3.3"
+
+services:
+    db:
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+    adminer:
+        image: adminer
+        ports:
+            - 8080:8080
