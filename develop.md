@@ -97,7 +97,6 @@
 
 ### 缓存服务
 - https://memcached.org/
-- https://redis.io/
 
 ### 数据库
 - https://dev.mysql.com/doc/
