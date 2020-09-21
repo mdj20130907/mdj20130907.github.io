@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redis</title>
+</head>
+<body>
+    <ul>
+        <h6>https://redis.io/</h6>
+        <li>Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker</li>
+        <li>data structures: strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams</li>
+        <li>Redis, short for `Re`mote `Di`ctionary `S`erver</li>
+    </ul>
+    <ul>
+        <h6>https://try.redis.io/</h6>
+        <li>All the Redis operations implemented by single commands are atomic</li>
+        <li>Note that if you SET a key, its TTL will be reset</li>
+        <li>`A list` is a series of ordered values, 带顺序、不是排序， RPUSH, LPUSH, LLEN, LRANGE, LPOP, and RPOP</li>
+        <li>This concept is generally true for every Redis data structure: you don't create a key first, and add things to it later, but you can just directly use the command in order to add new elements. As side effect the key will be created if it did not exist. Similarly keys that will result empty after executing some command will automatically be removed from the key space</li>
+        <li>LRANGE: 第一个参数从0开始索引；第二个参数-1表示取到最后一个，-2表示取到倒数第二个；首尾都包含</li>
+        <li>`A set` is similar to a list, except it does not have a specific order and each element may only appear once，SADD, SREM, SISMEMBER, SMEMBERS and SUNION</li>
+        <li>`A sorted set` is similar to a regular set, but now each value has an associated score. This score is used to sort the elements in the set</li>
+        <li>`Hashes` are maps between string fields and string values, so they are the perfect data type to represent objects</li>
+    </ul>
+    <ul>
+        <h6>用例</h6>
+        <li>Session Cache</li>
+        <li>Full Page Cache (FPC)</li>
+        <li>Leaderboards/Counting</li>
+        <li>Queues</li>
+        <li>Pub/Sub</li>
+    </ul>
+    <ul>
+        <h6>https://redis.io/commands</h6>
+        <li>Cluster</li>
+        <li>Connection</li>
+        <li>Geo</li>
+        <li>Hashes</li>
+        <li>HyperLogLog</li>
+        <li>Keys</li>
+        <li>Lists</li>
+        <li>Pub/Sub</li>
+        <li>Scripting</li>
+        <li>Server</li>
+        <li>Sets</li>
+        <li>Sorted Sets</li>
+        <li>Streams</li>
+        <li>Strings</li>
+        <li>Transactions</li>
+    </ul>
+    <li>Cluster</li>
+        <li>Connection</li>
+        <li>Geo</li>
+        <li>HyperLogLog</li>
+        <li>Keys</li>
+        <li>Pub/Sub</li>
+        <li>Scripting</li>
+        <li>Server</li>
+        <li>Sorted Sets</li>
+        <li>Streams</li>
+        <li>Strings</li>
+        <li>Transactions</li>
+</body>
+</html>
