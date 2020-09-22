@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+    php:
+        build: .
+        command: php -t /code -S 0.0.0.0:80
+        volumes:
+            - .:/code
+        ports:
+            - 8080:80
+    redis:
+        image: redis:6.0
+        command: redis-server --appendonly yes
+        volumes:
+            - my-test-vol:/data
+volumes:
+    my-test-vol:
