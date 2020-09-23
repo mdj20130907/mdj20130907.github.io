@@ -55,6 +55,8 @@
         <li>Pipelining: `(printf "PING\r\nPING\r\nPING\r\n"; sleep 1) | nc localhost 6379`</li>
         <li>Redis Pub/Sub: Publishing on db 10, will be heard by a subscriber on db 1</li>
         <li>Redis Lua scripting: `eval "return {KEYS[1],KEYS[2],ARGV[1],ARGV[2]}" 2 key1 key2 first second`</li>
+        <li>Debugging Lua scripts</li>
+        <li>Memory optimization</li>
     </ul>
 
     <ul>
