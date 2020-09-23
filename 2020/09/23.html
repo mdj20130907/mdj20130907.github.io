@@ -47,6 +47,12 @@
     <ul>
         <h6>php+redis</h6>
         <li>https://github.com/phpredis/phpredis</li>
+        <li>redis是基于tcp的c-s模式，tcp是基于文本的协议；与tcp交互除了使用redis-cli外，还可以直接使用nc发送文本到服务端口</li>
+    </ul>
+
+    <ul>
+        <h6>Programming with Redis</h6>
+        <li>Pipelining: (printf "PING\r\nPING\r\nPING\r\n"; sleep 1) | nc localhost 6379</li>
     </ul>
 
     <ul>
@@ -59,11 +65,9 @@
     </ul>
 
     <li>Cluster</li>
-        <li>Connection</li>
         <li>Geo</li>
         <li>HyperLogLog</li>
         <li>Keys</li>
-        <li>Pub/Sub</li>
         <li>Scripting</li>
         <li>Server</li>
         <li>Streams</li>

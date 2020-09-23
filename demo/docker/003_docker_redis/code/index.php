@@ -1,9 +1,11 @@
 <?php
 
-$redis = new Redis();
-$redis->connect('redis');// `redis`是`docker-compose.yml`文件里的`services`名称
+require_once 'config.php';
 
-$r = $redis->auth('123456');
+$redis = new Redis();
+$redis->connect($redis_config['host']);
+
+$r = $redis->auth($redis_config['password']);
 var_dump($r);
 
 $r = $redis->ping();
