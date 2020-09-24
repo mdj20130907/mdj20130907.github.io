@@ -59,7 +59,10 @@
         <li>Memory optimization</li>
         <li>Expires: Keys expiring information is stored as absolute Unix timestamps; Redis keys are expired in two ways: a passive way, and an active way</li>
         <li>Redis as an LRU cache: eviction; less recently used (LRU);  Least Frequently Used (LFU)</li>
-        <li>Redis transactions: telnet 127.0.0.1 6379; Why Redis does not support roll backs</li>
+        <li>Redis transactions: telnet 127.0.0.1 6379; Why Redis does not support roll backs; Optimistic locking using check-and-set</li>
+        <li>Client side caching: 1）the server remembers what keys a given client accessed；2）clients subscribe to key prefixes such as object: or user:</li>
+        <li>Mass insertion of data: cat data.txt | redis-cli --pipe</li>
+        <li>Partitioning: different systems to map a given key to a given Redis server; range partitioning/hash partitioning; Client side partitioning/Proxy assisted partitioning/Query routing</li>
     </ul>
 
     <ul>
