@@ -63,6 +63,9 @@
         <li>Client side caching: 1）the server remembers what keys a given client accessed；2）clients subscribe to key prefixes such as object: or user:</li>
         <li>Mass insertion of data: cat data.txt | redis-cli --pipe</li>
         <li>Partitioning: different systems to map a given key to a given Redis server; range partitioning/hash partitioning; Client side partitioning/Proxy assisted partitioning/Query routing</li>
+        <li>Distributed locks</li>
+        <li>Redis keyspace notifications: if your Pub/Sub client disconnects, and reconnects later, all the events delivered during the time the client was disconnected are lost</li>
+        <li>Creating secondary indexes with Redis</li>
     </ul>
 
     <ul>
