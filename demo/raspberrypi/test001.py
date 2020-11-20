@@ -8,7 +8,7 @@ from time import sleep, strftime
 GPIO.setmode(GPIO.BCM)
 
 # 定义GPIO引脚
-GPIO_PINS = [2, 3, 4, 17, 27, 22]
+GPIO_PINS = [13, 3, 4, 17, 27, 19]
 
 # 输出
 GPIO.setup(GPIO_PINS, GPIO.OUT)
