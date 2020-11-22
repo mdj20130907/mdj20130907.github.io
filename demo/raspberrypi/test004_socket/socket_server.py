@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import RPi.GPIO as GPIO
+from time import sleep
 import sys
 if sys.version > '3':
     from queue import Queue

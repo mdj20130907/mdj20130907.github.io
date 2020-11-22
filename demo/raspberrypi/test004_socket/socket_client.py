@@ -20,6 +20,19 @@ try:
     while input_flag:
         command = input('Please input command name, exit to stop:')
         print('input: ' + command)
+
+        # 命令简写
+        if 'f' == command:
+            command = 'forward'
+        elif 'b' == command:
+            command = 'back'
+        elif 'l' == command:
+            command = 'left'
+        elif 'r' == command:
+            command = 'right'
+        elif 's' == command:
+            command = 'stop'
+
         # exit 服务端不再read
         # shutdown 服务端不再accept
         if command in ('exit', 'shutdown', 'stop', 'forward', 'back', 'left', 'right'):
