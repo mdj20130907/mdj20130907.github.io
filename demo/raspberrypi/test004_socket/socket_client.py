@@ -19,7 +19,7 @@ input_flag = True
 try:
     while input_flag:
         command = input('Please input command name, exit to stop:')
-        print('input: ' + command)
+        print('input:"%s"' % (command, ))
 
         # 命令简写
         if 'f' == command:
@@ -38,10 +38,17 @@ try:
         if command in ('exit', 'shutdown', 'stop', 'forward', 'back', 'left', 'right'):
             print('send: ' + command)
             sock.sendall(command.encode())
-            if 'exit' == command:
-                # 断开连接，不再发送数据
-                # 此处服务端接到exit也可能结束客户端连接，不确定
+            if 'exit' == command: # 断开当前连接
+                input_flag = False
+                continue
+            elif 'shutdown' == command: # 关闭服务端，同时断开当前连接
                 input_flag = False
                 continue
 finally:
     sock.close()
+
+# 用例
+# 1. 直接ctrl+c退出客户端
+# 2. exit
+# 3. shutdown
+# 4. 其他输入

@@ -134,11 +134,16 @@ class MySocketServer:
                 print('receive:"%s"' % (command, ))
 
                 # When a recv returns 0 bytes, it means the other side has closed (or is in the process of closing) the connection
-                if command in ('', 'exit', ): # 客户端断开连接后接收到的是空, 客户端可显示的发送exit
-                    self.stop_read()
+                if '' == command: # 客户端断开连接后接收到的是空
+                    self.stop_read(client_address)
+                    continue
+                elif 'exit' == command: # 客户端可显示的发送exit
+                    self.stop_read(client_address)
                     continue
                 elif 'shutdown' == command: # 客户端发送shutdown要求服务端关闭
                     self.stop_accept()
+                    # 此处虽然停止接收新连接了，但是原有的连接仍未断开
+                    # 客户端自己顺手把自己关闭了
                     continue
                 else:
                     # 客户端保证
@@ -146,9 +151,9 @@ class MySocketServer:
                     self.command_queue.put(command)
             client_socket.close()
         self.sock.close()
-    def stop_read(self):
+    def stop_read(self, client_address):
         self.read_flag = False
-        print('stop reading from this client')
+        print('disconnect from client %s:%s' % client_address)
     def stop_accept(self):
         self.accept_flag = False
         self.carExcutor.stop()
