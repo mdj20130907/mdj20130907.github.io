@@ -22,12 +22,12 @@ class Car:
         # 保存上次执行的不同状态forward/back, left/right后恢复
         self.previous_command = None
         # 每次转向命令的执行时间
-        self.turn_sleep = 0.1
+        self.turn_sleep = 0.2
     def move(self):
         GPIO.output([self.GPIO_PINS[0], self.GPIO_PINS[5]], GPIO.HIGH)
     def stop(self):
         GPIO.output(self.GPIO_PINS, GPIO.LOW)
-        self.previous_command = None
+        self.previous_command = 'stop'
     def forward(self):
         GPIO.output(self.GPIO_PINS[4],GPIO.HIGH)
         GPIO.output(self.GPIO_PINS[3],GPIO.LOW)
@@ -90,48 +90,61 @@ class CarExcutor:
             print('worker_thread is alive, wait 60s')
             self.worker_thread.join(60)
 
+# https://docs.python.org/2/howto/sockets.html
+# https://docs.python.org/2/library/socket.html
 # socker server
 class MySocketServer:
-    def __init__(self, command_queue, carExcutor, host_ip):
+    def __init__(self, command_queue, carExcutor):
         self.command_queue = command_queue
         self.carExcutor = carExcutor
         # 继续在当前连接读取数据
         self.read_flag = True
         # 继续接受新客户端连接
         self.accept_flag = True
-        self.server_address = (host_ip, 9527, )
-        # Create a TCP/IP socket
+        # create an INET, STREAMing socket
         self.sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        # bind() is used to associate the socket with the server address
-        self.sock.bind(self.server_address)
-        # listen() puts the socket into server mode, and accept() waits for an incoming connection
-        self.sock.listen(1)
-        print('listening on %s:%s' % self.server_address)
+        # bind the socket to a public host and a well-known port
+        server_address = (socket.gethostname(), 9527, )
+        self.sock.bind(server_address)
+        # become a server socket
+        self.sock.listen(1) # 只接受1个连接
+        print('listening on %s:%s' % server_address)
 
     def start(self):
-        while self.accept_flag:
+        while self.accept_flag: # 是否接受新连接
+            # accept connections from outside
             print('waiting for a connection')
-            (connection, client_address, ) = self.sock.accept()
+            (client_socket, client_address, ) = self.sock.accept()
             print('connection from %s:%s' % client_address)
-            # 循环里结束后有新连接进来要开启，只能支持一个客户端
+
+            # !! 一般开启新线程去处理
+            # The important thing to understand now is this:
+            # this is all a “server” socket does.
+            # It doesn’t send any data. It doesn’t receive any data. It just produces “client” sockets.
+            # Each clientsocket is created in response to some other “client” socket doing a connect() to the host and port we’re bound to.
+            # As soon as we’ve created that clientsocket, we go back to listening for more connections.
+
+            # 每次接受了新的连接，都要设置继续读取数据标志
+            # 上一个连接结束的时候这个标志被设置成False了
+            # 因为只有1个连接，所以此处read_flag不会在多个连接之前混淆状态
             self.read_flag = True
-            try:
-                while self.read_flag:
-                    command = connection.recv(1024).decode()
-                    print('receive: ' + command)
-                    if not command or 'exit' == command:
-                        # 客户端已经断开连接/发送空数据，不再继续读取数据
-                        self.stop_read()
-                        continue
-                    elif 'shutdown' == command:
-                        self.stop_accept()
-                        continue
-                    else:
-                        # 客户端保证
-                        # 'stop', 'forward', 'back', 'left', 'right'
-                        self.command_queue.put(command)
-            finally:
-                connection.close()
+
+            while self.read_flag: # 是否从当前连接继续读取数据
+                command = client_socket.recv(1024).decode()
+                print('receive:"%s"' % (command, ))
+
+                # When a recv returns 0 bytes, it means the other side has closed (or is in the process of closing) the connection
+                if command in ('', 'exit', ): # 客户端断开连接后接收到的是空, 客户端可显示的发送exit
+                    self.stop_read()
+                    continue
+                elif 'shutdown' == command: # 客户端发送shutdown要求服务端关闭
+                    self.stop_accept()
+                    continue
+                else:
+                    # 客户端保证
+                    # 'stop', 'forward', 'back', 'left', 'right'
+                    self.command_queue.put(command)
+            client_socket.close()
         self.sock.close()
     def stop_read(self):
         self.read_flag = False
@@ -144,7 +157,7 @@ class MySocketServer:
 # 队列保证了在一个时间点只有一个command在执行
 command_queue = Queue(maxsize=5)
 carExcutor = CarExcutor(command_queue)
-mySocketServer = MySocketServer(command_queue, carExcutor, '192.168.4.1')
+mySocketServer = MySocketServer(command_queue, carExcutor)
 
 carExcutor.start()
 mySocketServer.start()
