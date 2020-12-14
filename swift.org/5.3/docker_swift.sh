@@ -3,6 +3,6 @@ docker run \
 --workdir /root/develop \
 --privileged \
 --interactive --tty \
---name my-swift \
-swift \
+--name swift-5.3 \
+swift:5.3 \
 /bin/bash

@@ -1,0 +1,1 @@
+swiftc "WELCOME TO SWIFT/A Swift Tour/002_Simple Values/$1.swift" && ./main
