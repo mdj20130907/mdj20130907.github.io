@@ -1,8 +1,15 @@
-let optionalSquare: Square? = Square(sideLength: 2.5, name: "optional square")
-let optionalSideLength = optionalSquare?.sideLength
-// `?`是写在`.`前头，而不是`optionalSquare`的后头
-if let sideLength = optionalSideLength {
-    print(sideLength)
+// let optionalNamedShape: NamedShape?
+// error: constant 'optionalNamedShape' used before being initialized
+// global scope里没有默认值
+
+let optionalNamedShape: NamedShape? = nil
+
+// let optionalNamedShape: NamedShape? = NamedShape(name: "optional named shape")
+
+let optionalNumberOfSides = optionalNamedShape?.numberOfSides
+// `?`是写在`.`前头，而不是`optionalNamedShape`的后头
+if let numberOfSides = optionalNumberOfSides {
+    print(numberOfSides)
 }
 
 // When working with optional values, you can write ? before operations like methods, properties, and subscripting.

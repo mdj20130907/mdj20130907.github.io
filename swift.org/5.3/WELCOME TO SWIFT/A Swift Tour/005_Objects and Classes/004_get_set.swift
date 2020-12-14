@@ -20,7 +20,11 @@ class EquilateralTriangle: NamedShape {// 正三角形
     }
 }
 
-let shape = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
-print(shape.perimeter)
-shape.perimeter = 9.9
-print(shape.sideLength)
+func testEquilateralTriangle() {
+    let shape = EquilateralTriangle(sideLength: 3.1, name: "a triangle")
+    print(shape.perimeter)
+    shape.perimeter = 9.9
+    print(shape.sideLength)
+}
+
+// testEquilateralTriangle()
