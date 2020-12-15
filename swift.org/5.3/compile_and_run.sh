@@ -1,10 +1,9 @@
 # https://www.shellcheck.net/
 
-SOURCE_DIR="WELCOME TO SWIFT/A Swift Tour/009_Generics"
+SOURCE_DIR="WELCOME TO SWIFT/A Swift Tour/007_Protocols and Extensions"
 MAIN_SWIFT="$SOURCE_DIR/$1.swift"
 cp "$MAIN_SWIFT" main.swift \
-&& swiftc \
-main.swift \
+&& swiftc main.swift "$SOURCE_DIR/001.swift" "$SOURCE_DIR/002.swift" \
 && ./main
 
 # cp "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/$1.swift" main.swift \
