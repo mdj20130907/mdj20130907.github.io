@@ -20,6 +20,7 @@ enum Rank: Int {
 
 let ace = Rank.ace
 let aceRawValue = ace.rawValue
+print(ace, aceRawValue)
 
 // Use enum to create an enumeration.
 // Like classes and all other named types, enumerations can have methods associated with them.
