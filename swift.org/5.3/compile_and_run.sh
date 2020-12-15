@@ -1,8 +1,15 @@
-# swiftc "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/$1.swift" && ./main
+# https://www.shellcheck.net/
 
-cp "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/$1.swift" main.swift \
-&& swiftc "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/002_init_self_deinit.swift" main.swift \
+SOURCE_DIR="WELCOME TO SWIFT/A Swift Tour/009_Generics"
+MAIN_SWIFT="$SOURCE_DIR/$1.swift"
+cp "$MAIN_SWIFT" main.swift \
+&& swiftc \
+main.swift \
 && ./main
+
+# cp "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/$1.swift" main.swift \
+# && swiftc "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/002_init_self_deinit.swift" main.swift \
+# && ./main
 
 # cp "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/$1.swift" main.swift \
 # && swiftc "WELCOME TO SWIFT/A Swift Tour/005_Objects and Classes/002_init_self_deinit.swift" \
