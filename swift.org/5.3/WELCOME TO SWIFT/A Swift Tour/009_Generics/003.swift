@@ -18,7 +18,8 @@ print(r)
 // or to require a class to have a particular superclass.
 
 
-// TODO: .Element ??
+// https://developer.apple.com/documentation/swift/sequence
+// https://developer.apple.com/documentation/swift/sequence/2908099-element
 func getCommonElements<T,U>(_ lhs: T, _ rhs: U) -> some Sequence
     where T: Sequence, U:Sequence, T.Element: Equatable, T.Element == U.Element
 {
