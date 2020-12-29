@@ -12,12 +12,17 @@
 - A Community Framework
 
 # Your First Laravel Project
-Getting Started On macOS
-Getting Started On Windows
-Getting Started On Linux
-Installation Via Composer
+- Getting Started On macOS
+- Getting Started On Windows
+- Getting Started On Linux
+- Installation Via Composer
+
 # Initial Configuration
+- config directory
+- config/app.php: timezone, locale
+- .env file should not be committed to your application's source control
+
 # Next Steps
-Laravel The Full Stack Framework
-Laravel The API Backend
+- Laravel The Full Stack Framework
+- Laravel The API Backend
 
