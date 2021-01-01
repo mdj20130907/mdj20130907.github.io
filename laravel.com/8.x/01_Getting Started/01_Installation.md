@@ -16,6 +16,7 @@
 - Getting Started On Windows
 - Getting Started On Linux
 - Installation Via Composer
+- `composer create-project laravel/laravel example-app`
 
 # Initial Configuration
 - config directory
