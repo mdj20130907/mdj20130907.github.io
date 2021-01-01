@@ -1,6 +1,6 @@
 # https://www.shellcheck.net/
 
-SOURCE_DIR="WELCOME TO SWIFT/A Swift Tour/006_Enumerations and Structures"
+SOURCE_DIR="LANGUAGE GUIDE/005_Control Flow"
 MAIN_SWIFT="$SOURCE_DIR/$1.swift"
 cp "$MAIN_SWIFT" main.swift \
 && swiftc main.swift \
