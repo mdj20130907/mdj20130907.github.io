@@ -27,9 +27,9 @@ docker run \
 -v $AOSP:/aosp \
 android-build-trusty
 
-# source /aosp/out/.ccache # 使用ccache
-
-# cd /aosp; source build/envsetup.sh
+# cd /aosp
+# source out/.ccache/bashrc # 使用ccache
+# source build/envsetup.sh
 # lunch aosp_arm-eng
 # m
 
