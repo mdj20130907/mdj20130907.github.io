@@ -17,6 +17,7 @@
 - Getting Started On Linux
 - Installation Via Composer
 - `composer create-project laravel/laravel example-app`
+- https://developer.aliyun.com/composer
 
 # Initial Configuration
 - config directory
