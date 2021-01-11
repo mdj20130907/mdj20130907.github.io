@@ -115,21 +115,20 @@
 - `@error` directive
 - @error('title') {{ $message }} @enderror
 
-
-# Components
-- php artisan make:component
-
-Rendering Components
-Passing Data To Components
-Component Attributes
-Slots
-Inline Component Views
-Anonymous Components
-Dynamic Components
-Manually Registering Components
-
+# Components: TODO:?
 
 # Stacks
+- @prepend('scripts') @endprepend
+- @push('scripts') @endpush
+- @stack('scripts')
+
 # Service Injection
+- @inject('metrics', 'App\Services\MetricsService')
+- {{ $metrics->monthlyRevenue() }}
+
 # Extending Blade
-Custom If Statements
+- Blade::directive
+- After updating the logic of a Blade directive, you will need to delete all of the cached Blade views
+
+## Custom If Statements
+- Blade::if
