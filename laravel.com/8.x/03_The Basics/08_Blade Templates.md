@@ -74,8 +74,51 @@
 - @once, @endonce
 
 ## Raw PHP
+- @php $counter = 1; @endphp
+
+# Building Layouts
+
+## Layouts Using Components
+### Defining The Layout Component
+- resources/views/components/layout1.blade.php
+- {{ $title }}
+- {{ $slot }}
+
+### Applying The Layout Component
+- resources/views/test1.blade.php
+- <x-layout1> <x-slot name="title">Custom Title</x-slot> 其他的都给了$slot </x-layout1>
+
+## Layouts Using Template Inheritance
+### Defining A Layout
+- resources/views/layouts/app2.blade.php
+- @section('sidebar') 内容 @show: @section directive, defines a section of content
+- @yield('title'): @yield directive is used to display the contents of a given section
+
+### Extending A Layout
+- resources/views/test2.blade.php
+- @extends('layouts.app2'): use the @extends Blade directive to specify which layout the child view should "inherit"
+- @section('title', '自定义标题'), @section('sidebar') @parent 新增内容 @endsection: inject content into the layout's sections using @section directives
+- utilizing the `@parent` directive to append (rather than overwriting) content to the layout
+- The `@endsection` directive will only define a section while `@show` will define and immediately yield the section
+- `@yield` directive also accepts a default value as its second parameter
+
+# Forms
+## CSRF Field
+- Anytime you define an HTML form in your application, you should include a hidden CSRF token field in the form so that the CSRF protection middleware can validate the request
+- `@csrf` Blade directive
+
+## Method Field
+- Since HTML forms can't make `PUT`, `PATCH`, or `DELETE` requests, you will need to add a hidden _method field to spoof these HTTP verbs
+- `@method` Blade directive
+
+## Validation Errors
+- `@error` directive
+- @error('title') {{ $message }} @enderror
+
 
 # Components
+- php artisan make:component
+
 Rendering Components
 Passing Data To Components
 Component Attributes
@@ -84,13 +127,8 @@ Inline Component Views
 Anonymous Components
 Dynamic Components
 Manually Registering Components
-# Building Layouts
-Layouts Using Components
-Layouts Using Template Inheritance
-# Forms
-CSRF Field
-Method Field
-Validation Errors
+
+
 # Stacks
 # Service Injection
 # Extending Blade
