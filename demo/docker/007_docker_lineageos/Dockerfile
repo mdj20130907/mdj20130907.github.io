@@ -11,9 +11,12 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update \
  && apt upgrade -y \
  && apt install -y bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev \
+ && apt install -y tmux htop \
  && apt autoremove \
  && apt clean \
  && rm -rf /var/lib/apt/lists/*
 
 # ccache
 ENV USE_CCACHE=1 CCACHE_EXEC=/usr/bin/ccache CCACHE_DIR=/ccache CCACHE_MAXSIZE=50G
+
+WORKDIR /lineageos

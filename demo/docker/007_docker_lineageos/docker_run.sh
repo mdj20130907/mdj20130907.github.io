@@ -6,7 +6,8 @@ docker run \
 -v `pwd`/ccache:/ccache \
 lineageos-build-focal
 
-# cd /lineageos/
+# pwd, cd /lineageos/
+# tmux
 # source build/envsetup.sh
 # breakfast lavender
 # croot
