@@ -1,0 +1,5 @@
+ccache
+.dockerignore
+.gitignore
+docker_*.sh
+Dockerfile
