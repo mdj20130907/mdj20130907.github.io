@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caniuse</title>
+</head>
+<body>
+    <ul>链接
+        <li title="测试的例子，直接可以参考. 注意: 需要查看jQuery是否加载成功+防火墙">https://tests.caniuse.com/</li>
+        <li>https://caniuse.com/ciu/news</li>
+        <li>https://caniuse.com/ciu/index</li>
+        <li>https://www.caniemail.com/</li>
+    </ul>
+    <ul>index
+        <li>CSS</li>
+        <li><ul>
+            <li>HTML5</li>
+            <li>Security</li>
+            <li>Other</li>
+        </ul></li>
+        <li><ul>
+            <li>SVG</li>
+            <li>JS API</li>
+            <li>JS<ul>
+                <li>Array.prototype.find<ul>
+                    <li>The find() method returns the `value` of the `first item` in the array based on the result of the provided testing function.</li>
+                    <li><code>[1,2,3].find(x=>x>1) === 2</code></li>
+                    <li><code>[1,2,3].find(x=>x>3) === undefined</code></li>
+                </ul></li>
+                <li>Array.prototype.findIndex<ul>
+                    <li>The findIndex() method returns the `index` of the `first element` in the array that satisfies the provided testing function.</li>
+                    <li><code>[1,2,3].findIndex(x=>x>1) === 1</code></li>
+                    <li><code>[1,2,3].findIndex(x=>x>3) === -1</code></li>
+                </ul></li>
+                <li>Array.prototype.includes<ul>
+                    <li>Determines whether or not an array includes the given `value`, returning a `boolean value` (unlike indexOf).</li>
+                    <li><code>[1,2,3].includes(3) === true</code></li>
+                    <li><code>[1,2,3].includes(4) === false</code></li>
+                </ul></li>
+                <li>Arrow functions<ul>
+                    <li>Function shorthand using `=>` syntax and lexical `this` binding.</li>
+                    <li><code>[1,2,3].map(x=>({id:x}))</code></li>
+                </ul></li>
+                <li>asm.js<ul>
+                    <li>An extraordinarily optimizable, low-level subset of JavaScript, intended to be a compile target from languages like C++.</li>
+                    <li>Deprecated</li>
+                </ul></li>
+                <li>Async functions<ul>
+                    <li>Async functions make it possible to treat functions returning Promise objects as if they were synchronous.</li>
+                    <li title="减少链式调用`.then`"><pre><code>
+                      function resolveAfter2Seconds() {
+                        return new Promise(resolve => {
+                          setTimeout(() => {
+                            resolve('resolved');
+                          }, 2000);
+                        });
+                      }
+
+                      async function asyncCall() {
+                        console.log('calling');
+                        const result = await resolveAfter2Seconds();
+                        console.log(result);
+                        // expected output: "resolved"
+                      }
+
+                      asyncCall();
+                    </code></pre></li>
+                </ul></li>
+                <li>BigInt<ul>
+                    <li>Arbitrary-precision integers in JavaScript.</li>
+                    <li><code>typeof 1n === 'bigint'</code></li>
+                    <li><code>typeof BigInt(1) === 'bigint'</code></li>
+                </ul></li>
+                <li>const<ul>
+                    <li>Declares a `constant` with `block level scope`</li>
+                </ul></li>
+                <li>Date.prototype.toLocaleDateString<ul>
+                    <li>Date method to generate a language sensitive representation of a given date, formatted based on a specified locale and options.</li>
+                    <li><code>(new Date()).toLocaleDateString()</code></li>
+                </ul></li>
+                <li>ECMAScript 2015 (ES6)<ul>
+                    <li>Support for the ECMAScript 2015 specification. Features include Promises, Modules, Classes, Template Literals, Arrow Functions, Let and Const, Default Parameters, Generators, Destructuring Assignment, Rest & Spread, Map/Set & WeakMap/WeakSet and many more.</li>
+                </ul></li>
+                <li>ECMAScript 5<ul>
+                    <li>Full support for the ECMAScript 5 specification. Features include Function.prototype.bind, Array methods like indexOf, forEach, map & filter, Object methods like defineProperty, create & keys, the trim method on Strings and many more.</li>
+                </ul></li>
+                <li>ECMAScript 5 Strict Mode<ul>
+                    <li>Method of placing code in a "strict" operating context.</li>
+                    <li><code>"use strict";</code></li>
+                </ul></li>
+                <li>ES6 classes<ul>
+                    <li>ES6 classes are syntactical sugar to provide a much simpler and clearer syntax to create objects and deal with inheritance.</li>
+                    <li><code>class name [extends] { // class body }</code></li>
+                </ul></li>
+                <li>ES6 Generators<ul>
+                    <li>ES6 Generators are special functions that can be used to control the iteration behavior of a loop. Generators are defined using a `function*` declaration.</li>
+                </ul></li>
+                <li>ES6 Number<ul>
+                    <li>Extensions to the Number built-in object in ES6, including constant properties EPSILON, MIN_SAFE_INTEGER, and MAX_SAFE_INTEGER, and methods isFinite, isInteger, isSafeInteger, and isNaN.</li>
+                </ul></li>
+                <li>ES6 Template Literals (Template Strings)<ul>
+                    <li>Template literals are string literals allowing embedded expressions using backtick characters (`). You can use multi-line strings and string interpolation features with them. Formerly known as template strings.</li>
+                </ul></li>
+                <li>flat & flatMap array methods<ul>
+                    <li>Methods to flatten any sub-arrays found in an array by concatenating their elements.</li>
+                    <li><code>[1,[2,3]].flat()</code></li>
+                    <li><code>['hi there', 'hello world'].map(x=>x.split(' '))</code></li>
+                    <li><code>['hi there', 'hello world'].flatMap(x=>x.split(' '))</code></li>
+                </ul></li>
+                <li>Internationalization API<ul>
+                    <li>Locale-sensitive collation (string comparison), number formatting, and date and time formatting.</li>
+                </ul></li>
+                <li>Intl.PluralRules API<ul>
+                    <li>API for plural sensitive formatting and plural language rules.</li>
+                </ul></li>
+                <li>JavaScript modules via script tag<ul>
+                    <li>Loading JavaScript module scripts (aka ES6 modules) using `&lt;script type="module"&gt;` Includes support for the nomodule attribute.</li>
+                </ul></li>
+                <li>JavaScript modules: dynamic import()<ul>
+                    <li>Loading JavaScript modules dynamically using the import() syntax</li>
+                </ul></li>
+                <li>JSON parsing<ul>
+                    <li>Method of converting JavaScript objects to JSON strings and JSON back to objects using JSON.stringify() and JSON.parse()</li>
+                </ul></li>
+                <li>let<ul>
+                    <li>Declares a `variable` with `block level scope`</li>
+                </ul></li>
+                <li>localeCompare()<ul>
+                    <li>The localeCompare() method returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.</li>
+                </ul></li>
+                <li>Lookbehind in JS regular expressions<ul>
+                    <li>Zero-width assertion that ensures a pattern is preceded by another pattern in a JavaScript regular expression.</li>
+                </ul></li>
+            </ul></li>
+        </ul></li>
+    </ul>
+</body>
+</html>

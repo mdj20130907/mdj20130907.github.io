@@ -17,7 +17,6 @@
 
 ### 前端工具库
 - https://github.com/postcss/autoprefixer
-- https://caniuse.com/
 - https://babeljs.io/
 - https://lodash.com/
 - https://flow.org/
