@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    <button onclick="test()">test</button>
+    <button onclick="test2()">test2</button>
+    <script>
+        // 传统的接受回调方式
+        function sayhello(order, callback) {
+            console.log(order, new Date(), '进入函数');// 进入函数的时间
+            setTimeout(function () {
+                console.log(order, new Date(), '倒计时结束');// 倒计时结束的时间
+                callback();// 调用回调函数
+            }, 1000);// 假设网络时延1s
+        }
+
+        function test(){
+            sayhello("first", function () {
+                sayhello("second", function () {
+                    sayhello("third", function () {
+                        console.log("end");
+                    });
+                });
+            });
+        }
+
+        // Promise
+        function sayhello2 (order) {
+            console.log(order, new Date(), '进入函数');// 进入函数的时间
+            // 返回一个Promise
+            return new Promise(function (resolve, reject) {
+                // Promise里执行耗时的异步操作
+                setTimeout(function () {
+                    console.log(order, new Date(), '倒计时结束');// 倒计时结束的时间
+                    //在异步操作执行完后执行 resolve() 函数
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function test2(){
+            sayhello2("first").then(function () {
+                //仍然返回一个 Promise 对象
+                return sayhello2("second");　　
+            }).then(function () {
+                return sayhello2("third");
+            }).then(function () {
+                console.log('end');
+            }).catch(function (err) {
+                console.log(err);
+            })
+        }
+
+        // 回调地狱
+        // 信任问题: 把自己的函数作为回调函数传给第三方, 不确定会不会被第三方重复调用以及是否会吞掉错误、什么时候调用等等
+        // Promise是异步编程的一种解决方案：从语法上讲，promise是一个对象，从它可以获取异步操作的消息；从本意上讲，它是承诺，承诺它过一段时间会给你一个结果。promise有三种状态：pending(等待态)，fulfiled(成功态)，rejected(失败态)；状态一旦改变，就不会再变。创造promise实例后，它会立即执行。
+        // https://zhuanlan.zhihu.com/p/100416432
+    </script>
+</body>
+</html>
