@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eclipse pdt</title>
+</head>
+<body>
+    <p>
+        <a target="_blank" href="https://www.eclipse.org/pdt/">官网</a>
+    </p>
+    <p>
+        <a target="_blank" href="https://github.com/eclipse/pdt">github</a>
+    </p>
+    <p>
+        xfce下的快捷方式
+        <br>
+        <a target="_blank" href="https://docs.xfce.org/xfce/exo/4.12/desktop-item-edit">xfce desktop-item-edit</a>
+        <br>
+        xfce: ~/.local/share/applications/*.desktop, /usr/share/applications/*.desktop
+    </p>
+    <p>
+        composer
+        <ul>
+            <li>composer global show</li>
+            <li>~/.config/composer/vendor/bin</li>
+        </ul>
+    </p>
+    <p>
+        laravel
+        <ul>
+            <li>.env: DB_CONNECTION=sqlite, DB_DATABASE=/absolute-path-laravel-app/database/laravel.sqlite</li>
+        </ul>
+    </p>
+    <p>eclipse
+        <ul>
+            <li>File -> Import -> General -> Projects from Folder or Archive</li>
+            <li>打开"composer.json"时提示"Missing node.js": <ul>
+                <li>update-alternatives --install /usr/bin/node node `which node` `node version in pure number`</li>
+                <li>update-alternatives --display node</li>
+                <li>update-alternatives --config node</li>
+            </ul></li>
+            <li>显示隐藏文件: Project Explorer -> 漏斗 -> 取消勾选".* resources"</li>
+            <li>tab改用空格: Window -> Preferences -> General -> Editors -> Text Editors -> Insert spaces for tabs</li>
+            <li>显示空白字符: -> Show whitespace characters</li>
+            <li><ul>debug
+                <li>xdebug(/etc/php/7.3/cli/conf.d/20-xdebug.ini): 启用remote_enable, 禁用remote_autostart</li>
+                <li>命令行: php artisan serve</li>
+                <li>eclipse: Window -> Preferences -> PHP -> Servers, edit, server+debugger</li>
+                <li>eclipse: server.php->右键->debug as->php web app</li>
+                <li>只有eclipse里启动的页面才会进入debug</li>
+            </ul></li>
+        </ul>
+    </p>
+    <p>xdebug
+        <ul>
+            <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings">版本2</a></li>
+            <li>配置xdebug<ul>
+                <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings#remote_enable">remote_enable</a></li>
+                <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings#remote_autostart">remote_autostart</a></li>
+            </ul></li>
+        </ul>
+    </p>
+</body>
+</html>
+
+# 调整
+- TODO: 不让eclipse检查该指定文件夹的错误
+- TODO: General->Appearance->Colors and fonts->Basic->Content Assistent
+
+Zend Debugger / Xdebug
+
+Debugging/Profiling
