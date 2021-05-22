@@ -33,7 +33,7 @@
             <li>.env: DB_CONNECTION=sqlite, DB_DATABASE=/absolute-path-laravel-app/database/laravel.sqlite</li>
         </ul>
     </p>
-    <p>eclipse
+    <p>eclipse pdt
         <ul>
             <li>File -> Import -> General -> Projects from Folder or Archive</li>
             <li>打开"composer.json"时提示"Missing node.js": <ul>
@@ -44,31 +44,51 @@
             <li>显示隐藏文件: Project Explorer -> 漏斗 -> 取消勾选".* resources"</li>
             <li>tab改用空格: Window -> Preferences -> General -> Editors -> Text Editors -> Insert spaces for tabs</li>
             <li>显示空白字符: -> Show whitespace characters</li>
-            <li><ul>debug
-                <li>xdebug(/etc/php/7.3/cli/conf.d/20-xdebug.ini): 启用remote_enable, 禁用remote_autostart</li>
-                <li>命令行: php artisan serve</li>
-                <li>eclipse: Window -> Preferences -> PHP -> Servers, edit, server+debugger</li>
-                <li>eclipse: server.php->右键->debug as->php web app</li>
-                <li>只有eclipse里启动的页面才会进入debug</li>
-            </ul></li>
         </ul>
     </p>
     <p>xdebug
         <ul>
-            <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings">版本2</a></li>
-            <li>配置xdebug<ul>
-                <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings#remote_enable">remote_enable</a></li>
-                <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings#remote_autostart">remote_autostart</a></li>
+            <li>apt install php-xdebug</li>
+            <li>/etc/php/7.3/cli/conf.d/20-xdebug.ini</li>
+            <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings">版本2.7</a></li>
+            <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings#remote_enable">remote_enable</a></li>
+            <li><a target="_blank" href="https://2.xdebug.org/docs/all_settings#profiler_output_dir">profiler_output_dir</a></li>
+        </ul>
+    </p>
+    <p>eclipse pdt debug laravel
+        <ul>
+            <li>1. laravel项目里命令行启动服务: php artisan serve</li>
+            <li>2. xdebug配置: xdebug.remote_enable = true</li>
+            <li>3. eclipse pdt<ul>
+                <li>Click the "Debug drop down arrow" and select "Debug Configurations"</li>
+                <li>Select "PHP Web Application" and click "New launch configuration"</li>
+                <li>On the "Server tab" click "Configure" to edit the default server or "New" to create a new server
+                    <ul>Server Properties
+                        <li>Base URL -> http://localhost:8000</li>
+                        <li>Document Root -> laravel public folder</li>
+                    </ul>
+                    <img src="21/1.png">
+                </li>
+                <li>"Debugger tab", select "Xdebug"
+                    <br>
+                    <img src="21/2.png">
+                </li>
+                <li>debug File, URL
+                    <br>
+                    <img src="21/3.png">
+                </li>
             </ul></li>
+            <li>4. laravel/public/index.php->右键->debug as->php web app</li>
+            <li>5. 非eclipse的api里调试需要带上"?XDEBUG_SESSION_START=ECLIPSE_DBGP"</li>
+        </ul>
+    </p>
+    <p> TODO:
+        <ul>
+            <li>不让eclipse检查该指定文件夹的错误</li>
+            <li>General->Appearance->Colors and fonts->Basic->Content Assistent</li>
+            <li>Debugging/Profiling, how to find Bottlenecks? profiler_output_dir <a target="_blank" href="https://github.com/jokkedk/webgrind">webgrind</a></li>
+            <li><a target="_blank" href="https://www.eclipse.org/pdt/help/html/debugging.htm">pdt debugging doc</a></li>
         </ul>
     </p>
 </body>
 </html>
-
-# 调整
-- TODO: 不让eclipse检查该指定文件夹的错误
-- TODO: General->Appearance->Colors and fonts->Basic->Content Assistent
-
-Zend Debugger / Xdebug
-
-Debugging/Profiling
