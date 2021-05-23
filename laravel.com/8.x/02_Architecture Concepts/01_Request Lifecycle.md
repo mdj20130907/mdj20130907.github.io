@@ -15,7 +15,7 @@
 
 ## Service Providers
 - configured in the `config/app.php` configuration file's `providers` array
-- Laravel will iterate through this list of providers and `instantiate` each of them. `register` the `boot`
+- Laravel will iterate through this list of providers and `instantiate` each of them. `register` then `boot`
 
 ## Routing
 - `App\Providers\RouteServiceProvider`
