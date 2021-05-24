@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swap</title>
+</head>
+<body>
+    <p>
+      <ul>
+          <li>swapon --show</li>
+          <li>free -h</li>
+          <li><ul>
+              <li>生成文件, dd if=/dev/zero of=/swapfile.2 bs=1M count=1024</li>
+              <li>制作swap, mkswap /swapfile.2</li>
+              <li>启用, swapon /swapfile.2</li>
+              <li>开机启动, vim /etc/fstab: /swapfile.2    swap        swap    defaults        0 0</li>
+          </ul></li>
+      </ul>
+    </p>
+</body>
+</html>
